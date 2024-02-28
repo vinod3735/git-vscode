@@ -1,12 +1,13 @@
-name: git-hub-actions
+name: First Workflow
 on: [push]
 
-
 jobs:
-  basic-progrm:
+  run-shell-commands:
     runs-on: ubuntu-latest
     steps:
-        - name: commands
-          run: ls-a
-
-
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline Command
+        run: |
+          node -v
+          npm -v
