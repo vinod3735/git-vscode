@@ -1,4 +1,4 @@
-name: First Workflow
+name: Skipping-workflow
 on: [push]
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
       - name: Multiline Command
         run: |
           node -v
-          npm -v
+        
   parallel-job-macos:
     runs-on: macos-latest
     steps:
