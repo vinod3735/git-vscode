@@ -22,7 +22,7 @@ jobs:
     runs-on: windows-latest
     needs: sequence-job
     steps:
-      - name: echo a string
+      - name: echo a str
         run: Write-Output "Windows String"
       
         
