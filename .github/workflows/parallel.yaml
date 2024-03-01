@@ -1,0 +1,29 @@
+name: parellel-workflos
+on: [push]
+
+
+jobs:
+  sequence-job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: echo a string
+          run: echo "hello world"
+        - name: multiline scalars
+          run: |
+            node -v
+            npm -v
+  parallel-job:
+    runs-on: macos-latest
+    steps:
+        - name: view sw version
+          run: sw_vers
+
+  dependent-job:
+    runs-on: windows-latest
+    needs: sequence-job
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexits
+        
